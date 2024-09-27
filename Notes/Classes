@@ -1,0 +1,44 @@
+Dumbing it down
+
+Think of JavaScript classes as containers that bundle together data (properties) and behavior (methods) that serve a common purpose. The common goal is to represent something (an object) that can perform certain actions, and have specific characteristics.
+
+
+so in classes we have informational structure and behavioural structure which are common characteritics shared between differenct instances of that paritcualar classes.
+
+ ### In technical terms:
+
+You **define** a class.
+You **create** instances (objects) using the class.
+You **call** methods or access properties on those instances.
+
+Each object is its own self-contained thing but follows the rules set out by the class. So, if your class defines a method to bake, decorate, or fight (depending on what you're making), every instance can do those things but with its own unique properties (informational structure).
+
+
+Inheritance - Parent and Child
+
+What’s Parent-Child in Classes?
+Parent Class (or Base Class): This is the class that has the common properties and methods that can be shared with other classes.
+Child Class (or Subclass): This is the class that inherits all the cool stuff from the parent class, but can also add its own unique properties and methods. It’s like getting a hand-me-down but making it your own by adding your personal style to it.
+
+
+
+
+control, customization, or validation - Getters and setters
+
+
+Getters let you customize how a property is accessed.
+Setters let you control how a property is modified (including validation).
+Together, they offer you more fine-grained control over your class properties, ensuring clean, controlled interactions
+
+Use getters/setters when you need to control, protect, validate, or transform the data.
+Skip them for simple properties that don’t require additional logic.
+Remember, getters and setters are tools for solving specific problems—if they’re not solving a problem, they’re just extra lines of code.
+Think of them as putting training wheels on a bike—only useful if the bike (your property) needs some kind of protection or guidance. Otherwise, let that property roll freely!
+
+
+Logical Questions to ask when Applying Classes
+
+What Problem am i trying to solve with classes ?
+In what ways to classes solve that problem ?
+
+
