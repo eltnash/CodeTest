@@ -28,6 +28,9 @@ class Pizza {
 
 }
 
+//creating an instance of Pizza class called myPizza
+const myPizza = new Pizza("large"); 
+
 console.log(Pizza.crust)
 
 

@@ -1,0 +1,62 @@
+
+ Variables that are declared outside of any "block" like a function or for loop are in the global scope. Your character, count, and rows variables are all in the global scope.  besides those mentioned above what other blocks are that also contain variables within their  scopes?
+
+
+1. **Function Scope**: Variables declared inside a function are local to that function and can’t be accessed from outside it. This scope is also known as the function's local scope. For example:
+    ```javascript
+    function exampleFunction() {
+        let localVariable = 'I am local!';
+    }
+    console.log(localVariable); // ReferenceError: localVariable is not defined
+    ```
+
+2. **Block Scope**: Introduced in ES6 with `let` and `const`, block scope is created by curly braces `{}`. This includes:
+   - **If Statements**:
+     ```javascript
+     if (true) {
+         let blockScopedVariable = 'Inside if block';
+     }
+     console.log(blockScopedVariable); // ReferenceError: blockScopedVariable is not defined
+     ```
+   - **Loops** (for, while, etc.):
+     ```javascript
+     for (let i = 0; i < 3; i++) {
+         let loopScopedVariable = 'Inside loop';
+     }
+     console.log(loopScopedVariable); // ReferenceError: loopScopedVariable is not defined
+     ```
+   - **Switch Statements**:
+     ```javascript
+     switch (true) {
+         case true:
+             let switchScopedVariable = 'Inside switch';
+             break;
+     }
+     console.log(switchScopedVariable); // ReferenceError: switchScopedVariable is not defined
+     ```
+
+3. **Class Scope**: Variables declared inside a class are scoped to the class instance and can’t be accessed outside of it. This includes:
+    ```javascript
+    class MyClass {
+        constructor() {
+            this.instanceVariable = 'I am an instance variable';
+        }
+    }
+    const myObject = new MyClass();
+    console.log(myObject.instanceVariable); // 'I am an instance variable'
+    console.log(instanceVariable); // ReferenceError: instanceVariable is not defined
+    ```
+
+4. **Module Scope**: In ES6 modules, variables declared in a module are scoped to that module. They are not accessible outside the module unless explicitly exported. For example:
+    ```javascript
+    // module.js
+    export const moduleVariable = 'I am a module variable';
+    ```
+
+    ```javascript
+    // main.js
+    import { moduleVariable } from './module.js';
+    console.log(moduleVariable); // 'I am a module variable'
+    ```
+
+Each of these scopes helps control the accessibility of variables and functions, reducing potential conflicts and improving code organization.
