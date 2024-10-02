@@ -1,0 +1,60 @@
+
+
+
+What’s stored in `closureFunc` is the **return value of `outerFunction`**, and that return value is the **`innerFunction` itself**. So `closureFunc` is now essentially the `innerFunction`, but with a twist — it has access to the variables that were in the scope of `outerFunction` (like `outerVar`).
+
+### Here’s What’s Happening in Detail:
+
+```javascript
+function outerFunction(outerVar) {
+    return function innerFunction(innerVar) {
+        return outerVar + innerVar;
+    }
+}
+
+const closureFunc = outerFunction(10);  // outerVar is set to 10, and innerFunction is returned
+```
+
+- When you call `outerFunction(10)`, JavaScript creates a **closure**.
+- **`outerVar = 10`** gets saved, and even though `outerFunction` finishes executing, `outerVar` is still available to the returned `innerFunction` (because of the closure).
+
+So:
+- **`closureFunc`** now holds the **`innerFunction`**.
+- **Inside `closureFunc`**, the variable `outerVar = 10` is **locked in memory**, thanks to the closure.
+
+### Visual Breakdown:
+1. **`outerFunction(10)`** runs, creating `outerVar = 10`, and returns `innerFunction`.
+2. **`closureFunc` now equals `innerFunction`**, but it still has access to `outerVar`, which is `10`.
+
+Now, when you call `closureFunc(5)`:
+- It’s like calling `innerFunction(5)`.
+- **`innerVar = 5`**, and **`outerVar` is still `10`** (captured by the closure).
+- So the returned value is `10 + 5 = 15`.
+
+### Example with Steps:
+```javascript
+function outerFunction(outerVar) {
+    return function innerFunction(innerVar) {
+        return outerVar + innerVar;  // outerVar is remembered from the closure
+    }
+}
+
+const closureFunc = outerFunction(10);  // closureFunc is now innerFunction with outerVar = 10
+
+console.log(closureFunc);  // Logs the innerFunction definition
+
+console.log(closureFunc(5));  // innerVar = 5, outerVar = 10, so it returns 15
+```
+
+### What’s Stored in `closureFunc`:
+- **`closureFunc` = `innerFunction`**.
+- **`outerVar` is saved in memory** due to the closure, and every time you call `closureFunc`, it still has access to that `outerVar` value (`10` in this case).
+
+This is the key concept of closures — **functions returned from other functions "remember" the environment (variables) they were created in**.
+
+### TL;DR:
+- `closureFunc` holds the `innerFunction` returned by `outerFunction`.
+- **`outerVar = 10`** is remembered in the closure, even after `outerFunction` finishes.
+- So when you call `closureFunc(5)`, it still has access to `outerVar` and returns `10 + 5 = 15`.
+
+Closure magic! Does that click now?
