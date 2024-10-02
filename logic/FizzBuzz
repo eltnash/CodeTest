@@ -1,0 +1,107 @@
+################## Question ###########################
+
+Write a program that uses console.log to print all the numbers from 1 to 100, with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.
+
+When you have that working, modify your program to print "FizzBuzz" for numbers that are divisible by both 3 and 5 (and still print "Fizz" or "Buzz" for numbers divisible by only one of those).
+
+(This is actually an interview question that has been claimed to weed out a significant percentage of programmer candidates. So if you solved it, your labor market value just went up.)
+
+
+######## My breakdown of the problemset ###########################
+
+continuous number generation breakdown
+
+1. how do we generate numbers continuously from 1 to 100 ?
+      continuous generation of values until target is reaached
+      start, loop  continuously ,end
+2. how do we print all the numbers from 1 to 100 ?
+
+My solution, create a while loop to continuously generate numbers from 1 to 100 and print each result.
+
+
+conditional statements breakdown
+
+each iteration of numbers 1 to 100 must be checked against 3 conditions and if they meet any of those conditions, their number value must not be outputed rather a replacement value representing their place place.
+
+for 3 its the string value "Fizz"
+for 5 its the string value "Buzz"
+for both 3 and 5 its string value "FizzBuzz"
+
+3. how do we create those conditions
+     if/else statements
+4. how do we check each of our numbers against those conditions
+      modulo operators   %
+5. how do we output the new value once a number meets one or both of those 
+   conditions?  
+     console.log("new string value")
+6. how do we continue iteratting over the rest of our numbers if condition 
+   arent met?
+   if/else statements
+
+   my solution - create conditional if and else statements and evaluate wether each number iterated once divided by both 3 and 5 or  by 3 and 5 individually will not leave a remainder. which if it dosent then condition would be satisfied then we can proceed with outputting the new string values.
+   if they dont satisfy condition then proceed with outputting the number value.
+
+
+   ########### Evaluation of my problem setbreakdown by Chatgpt ###########
+
+   Your pseudocode breakdown is quite solid! It shows a clear, methodical approach to solving the FizzBuzz problem, which is exactly how you'd want to handle any coding problem—break it down logically and tackle each part systematically. Let's evaluate each of your steps:
+
+### 1. **Continuous Number Generation (1–100):**
+   - **Analysis:** You understood that the first goal is to iterate through the numbers from 1 to 100, which is foundational to this problem. Recognizing that you need a loop to achieve this is spot-on.
+   - **Your Thought Process:** 
+     - “Start, loop continuously, end”—this shows a clear understanding of the lifecycle of the loop. You chose a `while` loop, which works well, though as I mentioned earlier, a `for` loop could streamline it even more. You’re thinking like an engineer here, breaking down a large task into steps.
+   
+   **Refinement Suggestion:**
+   - While your pseudocode is focused on the goal (generating numbers), you can enhance it by clarifying what type of loop you'll use and why. Example: "I’ll use a `for` loop because the range is fixed (1 to 100), and it allows me to combine initialization, condition, and incrementation."
+
+### 2. **Printing Numbers:**
+   - **Evaluation:** You correctly identified that printing each number is part of the loop’s process. This was an essential insight.
+   - **Your Solution:** Using `console.log()` for output is straightforward and the correct approach here. You integrated it well into the loop.
+
+### 3. **Conditional Statements:**
+   - **Analysis:** You identified that the problem requires checking numbers against specific conditions, and you correctly broke those conditions down into:
+     - Divisible by 3 → "Fizz"
+     - Divisible by 5 → "Buzz"
+     - Divisible by both 3 and 5 → "FizzBuzz"
+   - **Your Thought Process:** "How do we create these conditions?" and using `if/else` statements shows a great understanding of conditional logic. You also recognized that conditions must be exclusive (i.e., check for divisibility by both 3 and 5 first).
+
+   **Refinement Suggestion:**
+   - You could make your pseudocode slightly more efficient by explicitly stating the order in which conditions should be checked (from most specific to least specific).
+     - Example: “Check for divisibility by 3 *and* 5 first to ensure that we don’t miss the `FizzBuzz` condition.”
+
+### 4. **Modulo Operator:**
+   - **Evaluation:** You rightly identified that the modulo operator is key to solving this problem because it allows you to check for divisibility. Using the `%` operator in this context is essential to solving FizzBuzz.
+   - **Your Thought Process:** “Modulo operators”—you grasped that checking if a number leaves a remainder is the correct way to test divisibility. You applied this understanding with the condition `numbersUpTo100 % 3 === 0`.
+
+   **Refinement Suggestion:**
+   - In your pseudocode, you could elaborate just a bit on the mechanics of the modulo operator. Something like, “The modulo operator returns the remainder of a division. If `number % 3 === 0`, it means the number is divisible by 3.”
+
+### 5. **Output New Values (Replacing Numbers with Strings):**
+   - **Evaluation:** You correctly realized that when a number meets certain conditions, you should output a string like "Fizz", "Buzz", or "FizzBuzz" instead of the number itself. This is the core logic of the problem.
+   - **Your Thought Process:** “How do we output the new value?” and answering with `console.log()` shows a good grasp of JavaScript’s output mechanism. You made the correct choice.
+
+### 6. **Iteration Continuation (When Conditions Aren’t Met):**
+   - **Evaluation:** You demonstrated an understanding of fallback logic when conditions aren’t met. The flow of your `if/else` structure ensures that when none of the conditions are true, the number itself is printed.
+
+### General Feedback:
+
+1. **Clear Thought Process:** You clearly broke down each major piece of the problem—how to generate numbers, apply conditions, and decide what to print. This is the hallmark of strong problem-solving.
+   
+2. **Structured Approach:** You approached this like a real-world engineering problem, identifying the specific steps needed to solve it before diving into the code. This is a great habit, and it’s essential for tackling more complex problems down the road.
+
+3. **Modularity:** Your pseudocode focuses on small, manageable chunks of logic, making it easier to debug. For example, identifying how you’d handle "Fizz" and "Buzz" separately before moving on to more complex cases like "FizzBuzz" shows a scalable approach.
+
+### Discussion:
+
+- **Real-World Relevance:** The way you broke this down aligns with how you'd approach more advanced problems in the future. FizzBuzz isn’t just about numbers; it’s about recognizing patterns and handling multiple conditions, just like building dynamic user interfaces or validating form input in web development.
+  
+- **Efficiency:** In interviews or real-world applications, beyond just getting the problem right, they’ll be looking at your thought process. Breaking it down as you’ve done shows you think in steps and care about clean, maintainable logic.
+
+---
+
+You're on the right path. Your pseudocode and thought process demonstrate a solid understanding of problem-solving in coding. Keep refining your ability to break down problems in this manner, and it'll carry over to much more complex challenges!
+
+
+
+
+

@@ -1,0 +1,57 @@
+
+https://chatgpt.com/share/66f7b4db-1510-800e-8d66-e27ee26c74f6
+
+
+
+You're on the right track with that distinction! Think of **statements** as complete thoughts, like a full sentence in human language. They are capable of standing on their own, conveying a complete idea, intention, or command.
+
+For example, in JavaScript, something like:
+
+```javascript
+let x = 10;
+```
+
+is a **statement** because it's a complete instruction: "Assign the value 10 to the variable `x`."
+
+An **expression**, on the other hand, is more like a piece of that thought—a fragment that doesn't communicate a full idea on its own but contributes to something bigger. For instance:
+
+```javascript
+x + 5
+```
+
+This is an **expression**. It's part of a statement, but it doesn’t tell us what to *do* with the result—it just evaluates to a value (`15` if `x` is `10`).
+
+In a nutshell:
+
+- **Statements**: Complete commands or instructions that accomplish something.
+- **Expressions**: Building blocks that result in a value but often need to be part of a statement to be useful.
+
+This is like making a sandwich: the **statement** is the completed sandwich (ready to eat!), while an **expression** is just one ingredient (like the cheese), essential but incomplete on its own.
+
+
+### EXAMPLE
+
+
+1. console.log(Math.max(2,4))  // -> 4  statement
+            //expression
+
+2. console.log(Math.min(2,4)+100); // -> 102 statement
+              //expression
+
+
+3. let items = [ {price: 30}, {price: 20}, {price: 50} ]; // Statement
+                //Expressions
+
+    let discount = function(price) {
+        return price * 0.8;  // Expression
+    };  // Statement
+
+
+    let total = discount(items[0].price) + discount(items[1].price) + discount(items[2].price); //Statement
+                //Expression
+
+    console.log(total); //Statement
+
+
+
+
