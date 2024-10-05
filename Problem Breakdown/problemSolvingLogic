@@ -1,4 +1,28 @@
- Key Steps for Problem Solving summary
+ 
+if you can properly frame the question, the answer is comparatively easy - elon musk, example chessboard exercise 
+
+ Problem Solving frame work ##############################################################################################################################
+
+ 1. Solve the problem of understanding the problem - pseudocode, flowcharts etc. (what is the question ?)
+ 2. Solve the problem of communicating the problem - code syntax, control flow etc (What is the question ?)
+ 3. Solve the problem of Reviewing if the problem has been solved - testing, implementing etc (What is the question? )
+ 
+ 
+ Program development cycle ################################################################################################################################
+ 
+ Program Version 1 
+ Solve for correctness - is your problem solving solution solving the problem even though its Slow, bloated and inefficient? 
+ 
+ Program Version 2 
+ Solve for efficiency is your problem solving solution solving the problem, and is it doing so with the least amount of wasted time, effort or resources?
+ 
+ Program Version 3: 
+ Solve for scalability, elegance, and robustness—does it work in the real world, at scale, in a way that’s easy to maintain?
+ 
+ 
+ 
+ 
+ Key Steps for Problem Solving summary #######################################################################################################################
 
 1. Define your problem
 2. Make sure you fully understand the problem
@@ -9,7 +33,7 @@
 
 
 
-Detailed Overview of Steps 
+Detailed Overview of Steps #######################################################################################################################################
 
 
 how does one solve a problem ?
